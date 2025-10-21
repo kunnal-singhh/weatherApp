@@ -4,7 +4,7 @@
     margin:0;
 }
  .white-shadow {
-            box-shadow: 0 10px 15px rgba(255, 255, 255, 0.15); 
+           box-shadow: 1px 1px 5px 5px rgba(255, 255, 255, 0.15); 
         }
 .card-text{ 
     font-size:1.2rem;
@@ -14,4 +14,14 @@ span{
     color:blue;
     font-size:1.2rem;
 }
+.weather-icon{ 
+    width:7rem;
+}
+.black-shadow{ 
+    box-shadow: 1px 1px 5px 5px rgba(97, 97, 97, 0.15); 
+}
 
+/* .card-divi{ 
+    background-color: rgba(255, 255, 255, 0.405);
+
+} */

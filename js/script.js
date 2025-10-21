@@ -1,4 +1,10 @@
 let form=document.querySelector('form');
+ const options={ 
+    method:"GET",
+    headers:{
+        "X-Api-Key": "xZY8MPPfpimcgswdnB1OyQ==563umWZb1ahGepQE"
+    }
+}
 form.addEventListener('submit',async function(event){
     event.preventDefault();
     let inputField=document.querySelector('input');
@@ -11,11 +17,13 @@ form.addEventListener('submit',async function(event){
     let temperatureField=document.querySelector('.temperature');
     let humidityField=document.querySelector('.humidity');
     let conditionField=document.querySelector('.condition');
+    let airQualityField=document.querySelector(".air-quality")
     try{
     const response= await fetch(URL);
      if (!response.ok) throw new Error("Failed to fetch conversion rate");
-    const data= await response.json();
+     const data= await response.json();
     console.log(data)
+   
     let iconUrl=data.current.condition.icon;
     weatherIcon.src=iconUrl;
     let state=data.location.region;
@@ -28,6 +36,30 @@ form.addEventListener('submit',async function(event){
     humidityField.textContent=`${humidity}%`;
     let condition = data.current.condition.text;
     conditionField.textContent=`${condition}`;
+     const AQI_URL=`https://api.api-ninjas.com/v1/airquality?city=${city_name}`;
+const aqiResponse= await fetch(AQI_URL,options);
+     if (!aqiResponse.ok) throw new Error("Failed to fetch forcast data");
+     const aqiData= await aqiResponse.json();
+     let aqidx=aqiData.overall_aqi;
+function getAqiCondition(aqi) {
+    if (aqi >= 0 && aqi <= 50)
+        return "Good";
+    else if (aqi >= 51 && aqi <= 100)
+        return "Moderate";
+    else if (aqi >= 101 && aqi <= 150)
+        return "Unhealthy for Sensitive Groups";
+    else if (aqi >= 151 && aqi <= 200)
+        return "Unhealthy";
+    else if (aqi >= 201 && aqi <= 300)
+        return "Very Unhealthy";
+    else if (aqi >= 301)
+        return "Hazardous";
+    else
+        return "Invalid AQI";
+}
+    let aqiCondition=getAqiCondition(aqidx)
+    console.log(aqiCondition)
+   airQualityField.textContent=`${aqidx} , ${aqiCondition}`;
     console.log(temperature);
     console.log(humidity);
     console.log(condition)
@@ -38,9 +70,11 @@ form.addEventListener('submit',async function(event){
     humidityField.textContent='';
     conditionField.textContent='';
     weatherIcon.src='';
+     airQualityField.textContent='';
     
     console.error('Error fetching weather data:', error)};
 });
+
 
 let dark=false;
 let toggle = document.querySelector('.toggle');
@@ -53,13 +87,16 @@ toggle.addEventListener("click", function() {
     let body = document.querySelector('body');
     if(!dark){
     body.style.setProperty("background-color", "black");
+ infoCard.style.setProperty("background-color", "black");
+infoCard.style.setProperty("color", "white", "important");
      body.style.setProperty("color", "white");
      header.classList.remove('bg-light');
      header.classList.add('bg-dark');
      logoName.style.setProperty("color", "white");
      header.style.setProperty("color", "white");
-     infoCard.style.setProperty("background-color", "white");
-     infoCard.style.setProperty("color", "black");
+    
+      infoCard.classList.remove('black-shadow');
+     infoCard.classList.add('white-shadow');
      toggle.innerHTML='<i class="fa-solid fa-sun fa-xl"></i>';
      toggle.classList.remove('text-dark');
      toggle.classList.add('text-light');
@@ -75,7 +112,11 @@ toggle.addEventListener("click", function() {
      header.classList.add('bg-light');
      header.style.setProperty("color", "black");
      logoName.style.setProperty("color", "black");
+           infoCard.classList.remove('white-shadow');
+     infoCard.classList.add('black-shadow');
      toggle.innerHTML='<i class="fa-solid fa-moon fa-xl"></i>';
+      infoCard.style.setProperty("background-color", "white");
+infoCard.style.setProperty("color", "black", "important");
         toggle.classList.remove('text-light');
         toggle.classList.add('text-dark');
          links.forEach(link => {

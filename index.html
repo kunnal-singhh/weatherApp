@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>weatherApp</title>
+  <title>WeathAir</title>
   <link rel="icon" type="image/svg" href="reshot-icon-weather-VAUPX2QFJK.svg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -19,7 +19,7 @@
       <div class="row justify-content-center align-items-center text-center ">
         <div class="col-6 col-md-6 d-flex align-items-center logo-section ">
           <img src="reshot-icon-weather-VAUPX2QFJK.svg" alt="Logo" class="logo">
-          <h3 class="ms-2 logo-name mb-0">WeatherApp</h3>
+          <h3 class="ms-2 logo-name mb-0">WeathAir</h3>
         </div>
         <div class="col-6 col-md-6 text-end align-self-center">
             <a href="#" class="text-dark text-decoration-none me-3 toggle"><i class="fa-solid fa-moon fa-xl"></i></a>
@@ -31,21 +31,22 @@
       </div>
     </div>
   </header>
-  <main class="container-fluid my-4 text-center w-50">
-    <h1 class="mb-4 heading">Welcome to the Weather App</h1>
-    <p class="lead">Get the latest weather updates for your location.</p>
-    <div class="conatiner p-3 shadow-lg   mt-4 info-card rounded-4">
-      <h2 class="card-title ">Current Weather</h2>
+  <main class="container-fluid my-4  text-center w-75  ">
+    <h1 class="mb-4 heading">Welcome to the WeathAir App</h1>
+    <p class="lead">Get the latest weather and air quality updates for your location.</p>
+    <div class="conatiner p-3 black-shadow   mt-4 info-card rounded-4 white-shadow">
+      <h3 class="card-title color-secondary">WeathAir Current Report</h3>
       <hr>
       <div class="row d-flex align-items-center ">
-        <div class="col col-sm-4 icon  ">
+        <div class="col-12 col-md-4 icon  ">
           <img src="" alt="Weather Icon" class="weather-icon  ">
         </div>
-        <div class="col col-sm-8 details  text-start  ">
+        <div class="col-12 col-md-8 details  text-start  ">
           <p class="card-text ">Location: <span class="location"></span></p>
           <p class="card-text ">Temperature: <span class="temperature"></span></p>
           <p class="card-text ">Humidity: <span class="humidity"></span></p>
           <p class="card-text ">Condition: <span class="condition"></span></p>
+          <p class="card-text ">Air Quality: <span class="air-quality"></span></p>
         </div>
       </div>
     </div>

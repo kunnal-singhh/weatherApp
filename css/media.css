@@ -1,8 +1,10 @@
 @media (max-width: 1400px) {
-    .container-lg, .container-xl, .container-xxl, .container-md, .container-sm {
+    .container-lg, .container-xl, .container-xxl, .container-md{
         width: 1170px;
     }
+
 }
+
 @media(max-width:576px){
     .logo-name{
        
@@ -22,6 +24,7 @@
        margin: auto 10px;
        
     }
+   
 }
 @media (max-width: 365px) {
     .logo{
