@@ -1,0 +1,33 @@
+@media (max-width: 1400px) {
+    .container-lg, .container-xl, .container-xxl, .container-md, .container-sm {
+        width: 1170px;
+    }
+}
+@media(max-width:576px){
+    .logo-name{
+       
+        margin-left:5px;
+        margin-bottom:0;
+    }
+
+    .home, .about, .contact{
+        display:none;
+    }
+    header{ 
+        width:100vw;
+    }
+    header .row{ 
+        display:flex;
+        justify-content:space-between;
+       margin: auto 10px;
+       
+    }
+}
+@media (max-width: 365px) {
+    .logo{
+        height:50px;
+    }
+    .logo-name{
+       display:none;
+    }
+}

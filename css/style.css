@@ -1,0 +1,17 @@
+
+.logo{
+    height:40px;
+    margin:0;
+}
+ .white-shadow {
+            box-shadow: 0 10px 15px rgba(255, 255, 255, 0.15); 
+        }
+.card-text{ 
+    font-size:1.2rem;
+
+}
+span{ 
+    color:blue;
+    font-size:1.2rem;
+}
+
