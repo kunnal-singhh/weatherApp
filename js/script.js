@@ -74,6 +74,7 @@ toggle.addEventListener("click", function() {
      header.classList.remove('bg-dark');
      header.classList.add('bg-light');
      header.style.setProperty("color", "black");
+     logoName.style.setProperty("color", "black");
      toggle.innerHTML='<i class="fa-solid fa-moon fa-xl"></i>';
         toggle.classList.remove('text-light');
         toggle.classList.add('text-dark');
