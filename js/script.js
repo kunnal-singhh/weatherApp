@@ -75,57 +75,80 @@ function getAqiCondition(aqi) {
     console.error('Error fetching weather data:', error)};
 });
 
-
-let dark=false;
+let dark = false;
 let toggle = document.querySelector('.toggle');
 let header = document.querySelector('header');
-let links=document.querySelectorAll('a');
-let container=document.querySelector('.container');
-let infoCard=document.querySelector('.info-card');
-let logoName=document.querySelector('.logo-name');
-toggle.addEventListener("click", function() {
+let links = document.querySelectorAll('a');
+let container = document.querySelector('.container');
+let infoCard = document.querySelector('.info-card');
+let logoName = document.querySelector('.logo-name');
+let loadingText = document.querySelectorAll('.loadingText');
+let span = document.querySelectorAll('.location, .temperature, .humidity, .condition, .air-quality');
+
+toggle.addEventListener("click", function () {
     let body = document.querySelector('body');
-    if(!dark){
-    body.style.setProperty("background-color", "black");
- infoCard.style.setProperty("background-color", "black");
-infoCard.style.setProperty("color", "white", "important");
-     body.style.setProperty("color", "white");
-     header.classList.remove('bg-light');
-     header.classList.add('bg-dark');
-     logoName.style.setProperty("color", "white");
-     header.style.setProperty("color", "white");
-    
-      infoCard.classList.remove('black-shadow');
-     infoCard.classList.add('white-shadow');
-     toggle.innerHTML='<i class="fa-solid fa-sun fa-xl"></i>';
-     toggle.classList.remove('text-dark');
-     toggle.classList.add('text-light');
-     links.forEach(link => {
+    if (!dark) {
+        body.style.setProperty("background-color", "black");
+        infoCard.style.setProperty("background-color", "black");
+        infoCard.style.setProperty("color", "white", "important");
+        body.style.setProperty("color", "white");
+        header.classList.remove('bg-light');
+        header.classList.add('bg-dark');
+        logoName.style.setProperty("color", "white");
+        header.style.setProperty("color", "white");
+
+        infoCard.classList.remove('black-shadow');
+        infoCard.classList.add('white-shadow');
+        toggle.innerHTML = '<i class="fa-solid fa-sun fa-xl"></i>';
+        toggle.classList.remove('text-dark');
+        toggle.classList.add('text-light');
+        links.forEach(link => {
             link.classList.remove('text-dark');
             link.classList.add('text-light');
         });
-    dark=true;
+        loadingText.forEach((txt) => {
+            txt.classList.remove('text-black-50');
+            txt.classList.add('text-white-50');
+        });
+        span.forEach((t) => {
+            t.classList.remove('span-light');
+            t.classList.add('span-dark');
+        });
+
+        dark = true;
     } else {
-    body.style.setProperty("background-color", "white");
+        body.style.setProperty("background-color", "white");
         body.style.setProperty("color", "black");
-     header.classList.remove('bg-dark');
-     header.classList.add('bg-light');
-     header.style.setProperty("color", "black");
-     logoName.style.setProperty("color", "black");
-           infoCard.classList.remove('white-shadow');
-     infoCard.classList.add('black-shadow');
-     toggle.innerHTML='<i class="fa-solid fa-moon fa-xl"></i>';
-      infoCard.style.setProperty("background-color", "white");
-infoCard.style.setProperty("color", "black", "important");
+        header.classList.remove('bg-dark');
+        header.classList.add('bg-light');
+        header.style.setProperty("color", "black");
+        logoName.style.setProperty("color", "black");
+
+        infoCard.classList.remove('white-shadow');
+        infoCard.classList.add('black-shadow');
+        toggle.innerHTML = '<i class="fa-solid fa-moon fa-xl"></i>';
+        infoCard.style.setProperty("background-color", "white");
+        infoCard.style.setProperty("color", "black", "important");
+
         toggle.classList.remove('text-light');
         toggle.classList.add('text-dark');
-         links.forEach(link => {
+        links.forEach(link => {
             link.classList.remove('text-light');
             link.classList.add('text-dark');
         });
-    dark=false;
+        loadingText.forEach((txt) => {
+            txt.classList.remove('text-white-50');
+            txt.classList.add('text-black-50');
+        });
+        span.forEach((t) => {
+            t.classList.remove('span-dark');
+            t.classList.add('span-light');
+        });
+
+        dark = false;
     }
 });
+
   
 
 

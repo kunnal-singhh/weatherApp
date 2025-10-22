@@ -2,9 +2,35 @@
     .container-lg, .container-xl, .container-xxl, .container-md{
         width: 1170px;
     }
+  
 
 }
 
+@media screen and (min-width: 1200px)  {
+  .info-card {
+    width: 50%;
+    margin:0 auto;
+  }
+}
+@media screen and (max-width: 1200px)  {
+  .info-card {
+    width: 65%;
+    margin:0 auto;
+  }
+}
+@media screen and (min-width: 765px) and (max-width: 1000px) {
+  .info-card {
+    width: 80%;
+    margin:0 auto;
+  }
+}
+@media screen and (max-width: 765px)  {
+  .info-card {
+    width: 90%;
+    margin:0 auto;
+  }
+ 
+}
 @media(max-width:576px){
     .logo-name{
        

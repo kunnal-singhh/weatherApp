@@ -10,8 +10,12 @@
     font-size:1.2rem;
 
 }
-span{ 
+.span-light{ 
     color:blue;
+     font-size:1.2rem;
+}
+.span-dark{ 
+    color:rgb(17, 152, 255);
     font-size:1.2rem;
 }
 .weather-icon{ 

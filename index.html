@@ -8,6 +8,8 @@
   <link rel="icon" type="image/svg" href="reshot-icon-weather-VAUPX2QFJK.svg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
   <script src="https://kit.fontawesome.com/c7c852b34c.js" crossorigin="anonymous"></script>
@@ -31,26 +33,32 @@
       </div>
     </div>
   </header>
-  <main class="container-fluid my-4  text-center w-75  ">
-    <h1 class="mb-4 heading">Welcome to the WeathAir App</h1>
+  <div class="container-fluid my-4  text-center w-75 ">
+    <div class="conatiner">
+      <div class="row"> 
+            <h1 class="mb-4 heading">Welcome to the WeathAir App</h1>
     <p class="lead">Get the latest weather and air quality updates for your location.</p>
-    <div class="conatiner p-3 black-shadow   mt-4 info-card rounded-4 white-shadow">
+      </div>
+    </div>
+   </div>
+   <div class="container-fluid  text-center">
+    <div class="conatiner p-3 black-shadow   mt-4 info-card rounded-4 white-shadow ">
       <h3 class="card-title color-secondary">WeathAir Current Report</h3>
       <hr>
       <div class="row d-flex align-items-center ">
         <div class="col-12 col-md-4 icon  ">
-          <img src="" alt="Weather Icon" class="weather-icon  ">
+          <img src="reshot-icon-weather-VAUPX2QFJK.svg" alt="Weather Icon" class="weather-icon  ">
         </div>
-        <div class="col-12 col-md-8 details  text-start  ">
-          <p class="card-text ">Location: <span class="location"></span></p>
-          <p class="card-text ">Temperature: <span class="temperature"></span></p>
-          <p class="card-text ">Humidity: <span class="humidity"></span></p>
-          <p class="card-text ">Condition: <span class="condition"></span></p>
-          <p class="card-text ">Air Quality: <span class="air-quality"></span></p>
+        <div class="col-12 col-md-8 details  text-start ">
+          <p class="card-text "><i class="fa-solid fa-location-dot"></i>Location: <span class="location ms-2 span-light"><i class="text-black-50 loadingText">Loading location data...</i></span></p>
+          <p class="card-text "><i class="fa-solid fa-temperature-three-quarters"></i>Temperature: <span class="temperature ms-2 span-light"><i class="text-black-50 loadingText">Loading temperature data...</i></span></p>
+          <p class="card-text "><i class="fa-brands fa-drupal"></i>Humidity: <span class="humidity ms-2 span-light"><i class="text-black-50 loadingText">Loading humidity data...</i></span></p>
+          <p class="card-text "><i class="fa-solid fa-cloud-sun-rain"></i> Condition: <span class="condition ms-2 span-light"><i class="text-black-50 loadingText">Loading condition data...</i></span></p>
+          <p class="card-text "><i class="fa-solid fa-wind"></i> Air Quality: <span class="air-quality ms-2 span-light"><i class="text-black-50 loadingText">Loading air-quality data...</i></span></p>
         </div>
       </div>
     </div>
-  </main>
+ </div>
   <section>
   <form class="container-fluid my-4 text-center ">
     <h2 class="mb-4">Search Weather by City</h2>
@@ -59,7 +67,7 @@
         <input type="text" class="form-control border border-black" placeholder="Enter city name">
       </div>
       <div class="col-auto ">
-        <button type="submit" class="btn btn-primary mb-3 ">Search</button>
+        <button type="submit" class="btn btn-primary mb-2 ">Search</button>
       </div>
     </div>
   </form>
@@ -74,3 +82,4 @@
 </body>
 
 </html>
+
