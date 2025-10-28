@@ -75,7 +75,13 @@ function getAqiCondition(aqi) {
     console.error('Error fetching weather data:', error)};
 });
 
+
+
+
+
 let dark = false;
+const hamburgerIcon=document.querySelector(".hamburg i")
+const sideMenu = document.querySelector(".side-menu");
 let toggle = document.querySelector('.toggle');
 let header = document.querySelector('header');
 let links = document.querySelectorAll('a');
@@ -99,7 +105,7 @@ toggle.addEventListener("click", function () {
 
         infoCard.classList.remove('black-shadow');
         infoCard.classList.add('white-shadow');
-        toggle.innerHTML = '<i class="fa-solid fa-sun fa-xl"></i>';
+        toggle.innerHTML = '<i class="fa-solid fa-sun fa-lg"></i>';
         toggle.classList.remove('text-dark');
         toggle.classList.add('text-light');
         links.forEach(link => {
@@ -114,7 +120,8 @@ toggle.addEventListener("click", function () {
             t.classList.remove('span-light');
             t.classList.add('span-dark');
         });
-
+        hamburgerIcon.style.setProperty("color", "white");
+          sideMenu.style.setProperty("background-color"," black")
         dark = true;
     } else {
         body.style.setProperty("background-color", "white");
@@ -144,11 +151,36 @@ toggle.addEventListener("click", function () {
             t.classList.remove('span-dark');
             t.classList.add('span-light');
         });
+         hamburgerIcon.style.setProperty("color", "black");
+
+     sideMenu.style.setProperty("background-color","white");
 
         dark = false;
     }
 });
 
   
+
+
+hamburgerIcon.addEventListener('click',function (){ 
+    sideMenu.classList.toggle('open');
+});
+
+function toggleVisibility(){ 
+    if(sideMenu.classList.contains('open') &&window.innerWidth>=768 )
+    { 
+         sideMenu.classList.toggle('open');
+    }
+    // if(sideMenu.classList.contains('open') &&window.innerWidth<768 )
+    // { 
+    //      window.addEventListener('click',()=>{              have to add the feature that when it clicked outside the div then div disappear
+    //         sideMenu.classList.toggle('open');
+    //      })
+    // }
+  
+}
+toggleVisibility();
+window.addEventListener('resize',toggleVisibility);
+
 
 

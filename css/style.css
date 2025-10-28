@@ -1,4 +1,14 @@
-
+*{ 
+    letter-spacing: 1px;
+}
+header{ 
+    position: sticky;
+    top:0;
+    z-index: 5;
+}
+.lead{ 
+    font-weight: 400;
+}
 .logo{
     height:40px;
     margin:0;
@@ -24,8 +34,31 @@
 .black-shadow{ 
     box-shadow: 1px 1px 5px 5px rgba(97, 97, 97, 0.15); 
 }
+.side-menu {
+  position: fixed;
+  top: 1;
+  left: 0;
+  width:200px;
+  height: 100vh;
+  background-color: white;
+  padding-top: 20px;
+ display:none;
+ border-right: 1px solid rgba(128, 128, 128, 0.513);
+}
+.hamburg {
+    display: none;
+}
 
-/* .card-divi{ 
-    background-color: rgba(255, 255, 255, 0.405);
+.side-menu.open{ 
+    display:flex;
+    z-index: 2;
+}
 
-} */
+.side-menu .col-12 a{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+padding:10px 0;
+margin:0px !important;
+}
+

@@ -8,21 +8,25 @@
 
 @media screen and (min-width: 1200px)  {
   .info-card {
-    width: 50%;
+    width: 55%;
     margin:0 auto;
   }
+
 }
 @media screen and (max-width: 1200px)  {
   .info-card {
-    width: 65%;
+    width: 60%;
     margin:0 auto;
   }
+
 }
 @media screen and (min-width: 765px) and (max-width: 1000px) {
   .info-card {
     width: 80%;
     margin:0 auto;
   }
+  
+
 }
 @media screen and (max-width: 765px)  {
   .info-card {
@@ -31,7 +35,7 @@
   }
  
 }
-@media(max-width:576px){
+@media(max-width:768px){
     .logo-name{
        
         margin-left:5px;
@@ -40,6 +44,9 @@
 
     .home, .about, .contact{
         display:none;
+    }
+    .hamburg{ 
+      display:inline !important;
     }
     header{ 
         width:100vw;
@@ -58,5 +65,8 @@
     }
     .logo-name{
        display:none;
+    }
+    .toggle{ 
+      margin:0 !important;
     }
 }
