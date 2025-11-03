@@ -1,10 +1,13 @@
 *{ 
     letter-spacing: 1px;
 }
+
 header{ 
     position: sticky;
     top:0;
     z-index: 5;
+    background-color: white;
+    
 }
 .lead{ 
     font-weight: 400;
@@ -14,8 +17,9 @@ header{
     margin:0;
 }
  .white-shadow {
-           box-shadow: 1px 1px 5px 5px rgba(255, 255, 255, 0.15); 
+           box-shadow: 1px 1px 5px 3px rgba(255, 255, 255, 0.15); 
         }
+
 .card-text{ 
     font-size:1.2rem;
 
@@ -32,32 +36,33 @@ header{
     width:7rem;
 }
 .black-shadow{ 
-    box-shadow: 1px 1px 5px 5px rgba(97, 97, 97, 0.15); 
+    box-shadow: 1px 1px 5px 3px rgba(97, 97, 97, 0.15); 
 }
 .side-menu {
   position: fixed;
   top: 1;
-  left: 0;
-  width:200px;
-  height: 100vh;
-  background-color: white;
+  width:100%;
+  height: 80px;
+  background-color: rgb(255, 255, 255);
   padding-top: 20px;
- display:none;
- border-right: 1px solid rgba(128, 128, 128, 0.513);
+ display: none;
+ border-bottom: 1px solid rgba(128, 128, 128, 0.513);
 }
 .hamburg {
     display: none;
 }
 
 .side-menu.open{ 
-    display:flex;
+   display: block;
+
     z-index: 2;
 }
 
 .side-menu .col-12 a{
   display: flex;
-  flex-direction: column;
-  text-align: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 padding:10px 0;
 margin:0px !important;
 }

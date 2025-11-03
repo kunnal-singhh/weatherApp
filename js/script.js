@@ -8,21 +8,21 @@ let form=document.querySelector('form');
 form.addEventListener('submit',async function(event){
     event.preventDefault();
     let inputField=document.querySelector('input');
-    let city_name=inputField.value;
-    inputField.value='';
-    console.log(city_name);
-    const URL=`http://api.weatherapi.com/v1/current.json?key=605f37885d154036920210551252010&q=${city_name}&aqi=yes`;
-    let weatherIcon=document.querySelector('.weather-icon');
+      let weatherIcon=document.querySelector('.weather-icon');
     let locationField=document.querySelector('.location');
     let temperatureField=document.querySelector('.temperature');
     let humidityField=document.querySelector('.humidity');
     let conditionField=document.querySelector('.condition');
     let airQualityField=document.querySelector(".air-quality")
+    let city_name=inputField.value;
+    inputField.value='';
+     airQualityField.textContent='';
+    const URL=`http://api.weatherapi.com/v1/current.json?key=605f37885d154036920210551252010&q=${city_name}&aqi=yes`;
+  
     try{
     const response= await fetch(URL);
      if (!response.ok) throw new Error("Failed to fetch conversion rate");
      const data= await response.json();
-    console.log(data)
    
     let iconUrl=data.current.condition.icon;
     weatherIcon.src=iconUrl;
@@ -58,11 +58,8 @@ function getAqiCondition(aqi) {
         return "Invalid AQI";
 }
     let aqiCondition=getAqiCondition(aqidx)
-    console.log(aqiCondition)
+   
    airQualityField.textContent=`${aqidx} , ${aqiCondition}`;
-    console.log(temperature);
-    console.log(humidity);
-    console.log(condition)
 }
   catch(error){
     locationField.innerHTML = `"${city_name}"<span class="text-danger"> not found.</span> Please try again.`;
@@ -98,13 +95,12 @@ toggle.addEventListener("click", function () {
         infoCard.style.setProperty("background-color", "black");
         infoCard.style.setProperty("color", "white", "important");
         body.style.setProperty("color", "white");
-        header.classList.remove('bg-light');
-        header.classList.add('bg-dark');
+         header.style.setProperty("background-color","black");
         logoName.style.setProperty("color", "white");
-        header.style.setProperty("color", "white");
-
         infoCard.classList.remove('black-shadow');
         infoCard.classList.add('white-shadow');
+          header.classList.remove('black-shadow');
+          header.classList.add('white-shadow');
         toggle.innerHTML = '<i class="fa-solid fa-sun fa-lg"></i>';
         toggle.classList.remove('text-dark');
         toggle.classList.add('text-light');
@@ -126,13 +122,12 @@ toggle.addEventListener("click", function () {
     } else {
         body.style.setProperty("background-color", "white");
         body.style.setProperty("color", "black");
-        header.classList.remove('bg-dark');
-        header.classList.add('bg-light');
-        header.style.setProperty("color", "black");
+        header.style.setProperty("background-color","white");
         logoName.style.setProperty("color", "black");
-
         infoCard.classList.remove('white-shadow');
         infoCard.classList.add('black-shadow');
+          header.classList.remove('white-shadow');
+          header.classList.add('black-shadow');
         toggle.innerHTML = '<i class="fa-solid fa-moon fa-xl"></i>';
         infoCard.style.setProperty("background-color", "white");
         infoCard.style.setProperty("color", "black", "important");
