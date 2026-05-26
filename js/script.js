@@ -70,7 +70,7 @@ form.addEventListener('submit', async function (event) {
     try {
 
         const URL =
-            `http://api.weatherapi.com/v1/current.json?key=605f37885d154036920210551252010&q=${city_name}`;
+            `https://api.weatherapi.com/v1/current.json?key=605f37885d154036920210551252010&q=${city_name}`;
 
         const response = await fetch(URL);
 
