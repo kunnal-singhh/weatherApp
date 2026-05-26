@@ -99,8 +99,9 @@ form.addEventListener('submit', async function (event) {
 
     catch (error) {
 
-        console.error(error);
-
+     
+alert(error.message);
+console.log(error);
         showError(city_name);
     }
 
